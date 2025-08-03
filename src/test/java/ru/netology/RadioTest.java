@@ -6,6 +6,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RadioTest {
 
     @Test
+    void shouldCreateDefaultRadio() {
+        Radio radio = new Radio();
+        assertEquals(10, radio.getStationsCount());
+    }
+
+    @Test
+    void shouldCreateRadioWithCustomStationsCount() {
+        Radio radio = new Radio(15);
+        assertEquals(15, radio.getStationsCount());
+    }
+
+    @Test
+    void shouldCreateDefaultRadioIfNegative() {
+        Radio radio = new Radio(-1);
+        assertEquals(10, radio.getStationsCount());
+    }
+
+    @Test
     void shouldSetStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
